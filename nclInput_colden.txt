@@ -1,0 +1,3 @@
+/home/bthomas/storage/atmoRuns/HinputRun_12Jan2023
+colden_daily-2yr_HinputRun_12Jan2023_r5_startYr1983.out
+coldenhno3_daily-2yr_HinputRun_12Jan2023_r5_startYr1983.out

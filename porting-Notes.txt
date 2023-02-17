@@ -1,0 +1,25 @@
+Working on porting.
+
+May 2017
+I've been fixing various things, mainly old-style commands like "type" instead
+of "print".
+
+Currently (25 May) on getmomx_9gg.f
+"1PSIC" is apparently un-declared and I can't find it defined anywhere.  Stuck
+on that right now.
+I think the "1" is the problem.  "PSIC" is definded and used.  The 1 looks
+like a typo, though it appears in two places (symmetric).  Could be an
+idiosyncracy of the style rather than a typo, which is not recognized now.
+Pretty sure that the 1 should be removed and it will be fine.
+
+
+Leaving that (no change as of 27 May)
+Moved on, now at twodlib_9gl_A.f -- several syntax items to change.
+
+
+Nov 2017
+Didn't really keep this up to date...
+Basically, just a bunch more syntax issues.
+
+Now changing things for my purposes.  I've tried to mark all changes from here
+with "BThomas MonthYear".  Mainly so far just making changes to output.

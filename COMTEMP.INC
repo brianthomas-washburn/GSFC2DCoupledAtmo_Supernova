@@ -1,0 +1,4 @@
+
+
+        COMMON/TTROP/JDAYX,DAYX
+

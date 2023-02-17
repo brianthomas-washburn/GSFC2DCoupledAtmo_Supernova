@@ -1,0 +1,15 @@
+Looks like most time-dependent BCs are in bcin_9ha_A.f, from bc_wmo10_9ha.dat
+(fort.20); this is I think pretty much the same as previous model, should be
+fairly simple to translate over.
+
+But, in tempin_9hb_A.f, there's:
+C  Read in bottom boundary conditions for CO2; array CO2BCIN(18,101,360) is in
+COMMON
+C    daily values for 1950-2050 (101 years)
+c 
+       OPEN (79, FILE = 'co2bc_day.xdr', 
+
+So this I'm not sure about.  "Bottom" BCs, but are time dependent.
+----> Have to pay attention to this, since I want to control the CO2 values
+
+Similar with H2O
