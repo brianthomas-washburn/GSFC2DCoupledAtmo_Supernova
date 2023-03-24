@@ -70,7 +70,7 @@ To run these scripts you must install NCL:
 https://www.ncl.ucar.edu/
 
 System requirements to use the model:
-* The gfotran compiler
+* The gfortran compiler
 * For post-processing using the NCL scripts, a working version of NCL
 
 Basic model structure:
