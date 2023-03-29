@@ -8,6 +8,10 @@ temperature feedback and has user-definable latitude and altitude grids.
 This version is further modified by Brian Thomas and Alexander Yelland,
 primarily for the purpose of studying effect of nearby supernovae.
 
+DISCLAIMER: This version of the model is NOT endorsed or supported by the orginal
+NASA GSFC development team.  All modifications, and any errors therein, are solely
+the responsibility of the authors noted here.
+
 This README file written by Brian Thomas and Alexander Yelland, December 2020.
 Revised for github repository, February 2023.
 
@@ -70,7 +74,7 @@ To run these scripts you must install NCL:
 https://www.ncl.ucar.edu/
 
 System requirements to use the model:
-* The gfotran compiler
+* The gfortran compiler
 * For post-processing using the NCL scripts, a working version of NCL
 
 Basic model structure:
