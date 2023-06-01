@@ -3,7 +3,7 @@
 # This script sets up parameters and input files, compiles code,
 #   runs, and deals with output of the GSFC coupled 2D atmospheric chem-climate model
 # 
-# Parameters below can be set to do multiple 2-year runs in order to do long runs (e.g. 20 yrs)
+# Parameters below can be set to do multiple runs in order to do long runs, with restarts.
 # Output is moved to a storage directory and processing code is called to convert to netCDF files
 #
 #  BASE9HB = 2012 base model (run12 - January 2012) - 2011/2012 updates merged with MERRA IAV
@@ -24,7 +24,9 @@ putdir="OutputLocation"
 #analysisdir is where NCL code for processing output lives:
 analysisdir="./analysisdir"
 
-#number of 2-year long runs to do (so, 10 here is a 20 year run)
+#length of runs in years, between restarts:
+rln=2
+#number of rln-long runs to do (so, if each run is 2 years, 10 here is a 20 year run)
 rnum=10
 
 #year to start at:
@@ -55,7 +57,7 @@ ionsflag=1
 SNCRionization=./ion_input/ioninputValues.dat
 
 #how long to wait (in days) until the ionization data is read in? (1 year = 360 days)
-#ionStart must be less than 720!!!
+#ionStart must be less than rln*360
 ionStart=360
 
 #lightning enhancement? (0=no, 1=yes) >>> (changes calculation within solv_9hb.f)
@@ -353,11 +355,11 @@ for (( r=1; r <= rnum; r++)) #loop to do multiple sequential runs:
 do
   
   if [ $r -gt 1 ] ; then
-  	# Set the start year for the next run:
-  	startYr=$[${startYr}+2] #2 for 2-year run
-  	# Same control file will be used, except we need to update the start year,
-  	#   control input code reads in this startYear.txt file separately
-  	echo $startYr > startYear.txt
+      # Set the start year for the next run:
+      startYr=$[${startYr}+${rln}] #rln for rln-year run
+      # Same control file will be used, except we need to update the start year,
+      #   control input code reads in this startYear.txt file separately
+      echo $startYr > startYear.txt
   fi #updating and startYr
 
   echo " "
