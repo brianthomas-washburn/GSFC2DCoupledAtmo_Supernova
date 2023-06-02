@@ -124,6 +124,7 @@ cp ${f8file} fort.4
 cp ${controlFile} fort.7
 # control input code reads in this startYear.txt file separately
 echo ${startYr} > startYear.txt
+echo $((rln*360)) >> startYear.txt
 
 #F68H2OMR.DAT is read in from unit 12 in rdata.f - no longer used w/ compute H2O
 #F40GCRMM.DAT is read in from unit 96 in gcrs.f
@@ -360,6 +361,7 @@ do
       # Same control file will be used, except we need to update the start year,
       #   control input code reads in this startYear.txt file separately
       echo $startYr > startYear.txt
+      echo $((rln*360)) >> startYear.txt
   fi #updating and startYr
 
   echo " "

@@ -25,8 +25,10 @@ C READ IN IYEARSS - YEAR of STEADY-STATE SCENARIO, or starting year of run (Jan 
 !         Runscript updates the value in startYear.txt file
 	open(unit=2551,file='startYear.txt',form='formatted')
 	read(2551,'(1I4)') IYEARSS
+	read(2551,'(1I4)') INDAYS !BT2023 adding length of run in days specified by runscript
 	close(2551)
 	print *, '------- start year (IYEARSS): ', IYEARSS
+	print *, '------- number of days of run (INDAYS): ', INDAYS
 !end BT
 
                              ! IFIXOH = 0/1 (model/TRANSCOM clim troposph OH)
